@@ -17,74 +17,126 @@ class Reservation
     private $id;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="string", length=255)
      */
-    private $date_arrive;
+    private $nom;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="string", length=255)
      */
-    private $date_depart;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $nbrP;
+    private $prenom;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $nbrC;
+    private $tel;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $email;
+
+    /**
+     * @ORM\Column(type="date")
+     */
+    private $date_Arrive;
+
+    /**
+     * @ORM\Column(type="date")
+     */
+    private $date_Depart;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Chambres")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $chambre;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getDateArrive(): ?\DateTimeInterface
+    public function getNom(): ?string
     {
-        return $this->date_arrive;
+        return $this->nom;
     }
 
-    public function setDateArrive(\DateTimeInterface $date_arrive): self
+    public function setNom(string $nom): self
     {
-        $this->date_arrive = $date_arrive;
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    public function getPrenom(): ?string
+    {
+        return $this->prenom;
+    }
+
+    public function setPrenom(string $prenom): self
+    {
+        $this->prenom = $prenom;
+
+        return $this;
+    }
+
+    public function getTel(): ?int
+    {
+        return $this->tel;
+    }
+
+    public function setTel(int $tel): self
+    {
+        $this->tel = $tel;
+
+        return $this;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    public function getDateArrive(): ?\DateTimeInterface
+    {
+        return $this->date_Arrive;
+    }
+
+    public function setDateArrive(\DateTimeInterface $date_Arrive): self
+    {
+        $this->date_Arrive = $date_Arrive;
 
         return $this;
     }
 
     public function getDateDepart(): ?\DateTimeInterface
     {
-        return $this->date_depart;
+        return $this->date_Depart;
     }
 
-    public function setDateDepart(\DateTimeInterface $date_depart): self
+    public function setDateDepart(\DateTimeInterface $date_Depart): self
     {
-        $this->date_depart = $date_depart;
+        $this->date_Depart = $date_Depart;
 
         return $this;
     }
 
-    public function getNbrP(): ?int
+    public function getChambre(): ?Chambres
     {
-        return $this->nbrP;
+        return $this->chambre;
     }
 
-    public function setNbrP(int $nbrP): self
+    public function setChambre(?Chambres $chambre): self
     {
-        $this->nbrP = $nbrP;
-
-        return $this;
-    }
-
-    public function getNbrC(): ?int
-    {
-        return $this->nbrC;
-    }
-
-    public function setNbrC(int $nbrC): self
-    {
-        $this->nbrC = $nbrC;
+        $this->chambre = $chambre;
 
         return $this;
     }

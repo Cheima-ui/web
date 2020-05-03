@@ -16,4 +16,15 @@ class AcceuilController extends AbstractController
             'controller_name' => 'AcceuilController',
         ]);
     }
+
+
+    /**
+     * @Route("/show_res", name="lister")
+     */
+    public function reservation()
+    {
+        return $this->render('acceuil/reservation.html.twig', [
+            'controller_name' => 'AcceuilController',
+        ]);
+    }
 }

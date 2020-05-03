@@ -12,20 +12,28 @@
                 <td>{{ reservation.id }}</td>
             </tr>
             <tr>
-                <th>Date_arrive</th>
+                <th>Nom</th>
+                <td>{{ reservation.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ reservation.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Tel</th>
+                <td>{{ reservation.tel }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ reservation.email }}</td>
+            </tr>
+            <tr>
+                <th>Date_Arrive</th>
                 <td>{{ reservation.dateArrive ? reservation.dateArrive|date('Y-m-d') : '' }}</td>
             </tr>
             <tr>
-                <th>Date_depart</th>
+                <th>Date_Depart</th>
                 <td>{{ reservation.dateDepart ? reservation.dateDepart|date('Y-m-d') : '' }}</td>
-            </tr>
-            <tr>
-                <th>NbrP</th>
-                <td>{{ reservation.nbrP }}</td>
-            </tr>
-            <tr>
-                <th>NbrC</th>
-                <td>{{ reservation.nbrC }}</td>
             </tr>
         </tbody>
     </table>
