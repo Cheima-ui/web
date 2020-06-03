@@ -1,37 +1,39 @@
-{% extends 'base.html.twig' %}
 
-{% block title %}SPA index{% endblock %}
+
+{% extends 'FormBase.html.twig' %}
 
 {% block body %}
-    <h1>SPA index</h1>
+    <h1>Spa index</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Type</th>
+                <th>Image</th>
                 <th>Description</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
-        {% for s_p_a in s_p_as %}
+        {% for spa in spas %}
             <tr>
-                <td>{{ s_p_a.id }}</td>
-                <td>{{ s_p_a.type }}</td>
-                <td>{{ s_p_a.description }}</td>
+                <td>{{ spa.id }}</td>
+                <td>{{ spa.type }}</td>
+                <td>{{ spa.image }}</td>
+                <td>{{ spa.description }}</td>
                 <td>
-                    <a href="{{ path('s_p_a_show', {'id': s_p_a.id}) }}">show</a>
-                    <a href="{{ path('s_p_a_edit', {'id': s_p_a.id}) }}">edit</a>
+                    <a href="{{ path('spa_show', {'id': spa.id}) }}">show</a>
+                    <a href="{{ path('spa_edit', {'id': spa.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="5">no records found</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('s_p_a_new') }}">Create new</a>
+    <a href="{{ path('spa_new') }}">Create new</a>
 {% endblock %}

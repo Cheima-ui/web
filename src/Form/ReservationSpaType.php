@@ -2,26 +2,26 @@
 
 namespace App\Form;
 
-use App\Entity\Spa;
+use App\Entity\ReservationSpa;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class SpaType extends AbstractType
+class ReservationSpaType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('type')
-            ->add('image')
-            ->add('description')
+            ->add('Nom')
+            ->add('mail')
+            ->add('date')
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Spa::class,
+            'data_class' => ReservationSpa::class,
         ]);
     }
 }

@@ -1,0 +1,11 @@
+{% extends 'FormBase.html.twig' %}
+
+
+
+{% block body %}
+    
+
+    {{ include('reservation_spa/_form.html.twig') }}
+
+    <a href="{{ path('reservation_spa_index') }}">back to list</a>
+{% endblock %}

@@ -39,7 +39,13 @@
                                <li class="active"><a href="/reservation/">Reservations</a></li>
                                <li><a href="hotel.html">Notre Villa</a></li>
                                <li><a href="about.html">Notre Restaurant</a></li>
-                               <li><a href="blog.html">Nos soins et services </a></li>
+                               <li><a href="/res_SPA">Nos soins et services </a></li>
+                               {% if is_granted('ROLE_ADMIN') %}
+
+                               <li><a href="/chambres/new">ajouter chambre</a></li>
+
+                               <li><a href="/spa/new">ajouter Spa</a></li>
+                              {% endif %}
                                <li><a href="contact.html">Contact</a></li>
                              </ul>
                            </div>
@@ -76,10 +82,14 @@
       {% endblock %}
 
     <body>
+
+      <div>
       {% block body %}
 
 
       {% endblock %}
+
+    </div>
       <footer class="section footer-section">
      <div class="container">
        <div class="row mb-4">

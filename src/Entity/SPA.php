@@ -5,9 +5,9 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\SPARepository")
+ * @ORM\Entity(repositoryClass="App\Repository\SpaRepository")
  */
-class SPA
+class Spa
 {
     /**
      * @ORM\Id()
@@ -20,6 +20,12 @@ class SPA
      * @ORM\Column(type="string", length=255)
      */
     private $type;
+
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $image;
 
     /**
      * @ORM\Column(type="text")
@@ -51,6 +57,20 @@ class SPA
     public function setDescription(string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): self
+    {
+        $this->image = $image;
 
         return $this;
     }

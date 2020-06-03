@@ -2,7 +2,7 @@
 
 namespace App\Repository;
 
-use App\Entity\SPA;
+use App\Entity\Spa;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -12,11 +12,11 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method SPA[]    findAll()
  * @method SPA[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class SPARepository extends ServiceEntityRepository
+class SpaRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, SPA::class);
+        parent::__construct($registry, Spa::class);
     }
 
     // /**
